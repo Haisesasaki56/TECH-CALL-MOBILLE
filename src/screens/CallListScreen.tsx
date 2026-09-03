@@ -1,7 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   FlatList,
   StyleSheet,
   Text,
@@ -74,7 +73,7 @@ export default function CallListScreen({ navigation }: any) {
         renderItem={({ item }) => (
           <TouchableOpacity
             style={styles.card}
-            onPress={() => Alert.alert('Em breve', 'A tela de detalhes será implementada na próxima parte da aula.')}
+            onPress={() => navigation.navigate('CallDetail', { chamadoId: item.id })}
           >
             <Text style={styles.cardTitle}>{item.description}</Text>
             <Text style={styles.cardStatus}>{item.status}</Text>
